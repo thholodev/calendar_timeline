@@ -1,4 +1,4 @@
-import 'package:calendar_timeline/calendar_timeline.dart';
+import 'package:calendar_timeline_sbk/calendar_timeline.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../helper/helper.dart';

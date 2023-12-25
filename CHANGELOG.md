@@ -1,3 +1,21 @@
+## 1.1.6 - 25/012/2023
+
+* fix position for non selected day
+
+## 1.1.6 - 25/012/2023
+
+* fixed overflow for non selected day
+
+## 1.1.5 - 28/09/2023
+
+* added inactiveDayNameColor with 05 opacity when not selected
+## 1.1.4 - 24/09/2023
+
+* added inactiveDayNameColor
+
+## 1.1.3 - 24/09/2023
+
+* Show date on not selected days
 ## 1.1.2 - 14/03/2023
 
 * Minor updates

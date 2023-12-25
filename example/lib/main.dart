@@ -1,4 +1,4 @@
-import 'package:calendar_timeline/calendar_timeline.dart';
+import 'package:calendar_timeline_sbk/calendar_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -68,8 +68,9 @@ class _HomePageState extends State<HomePage> {
               leftMargin: 20,
               monthColor: Colors.white70,
               dayColor: Colors.teal[200],
-              dayNameColor: const Color(0xFF333A47),
+              dayNameColor: Color.fromARGB(255, 50, 59, 77),
               activeDayColor: Colors.white,
+              inactiveDayNameColor:Colors.redAccent[100],
               activeBackgroundDayColor: Colors.redAccent[100],
               dotsColor: const Color(0xFF333A47),
               selectableDayPredicate: (date) => date.day != 23,

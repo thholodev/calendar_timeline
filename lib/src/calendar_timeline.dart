@@ -1,7 +1,7 @@
-import 'package:calendar_timeline/src/day_item.dart';
-import 'package:calendar_timeline/src/month_item.dart';
-import 'package:calendar_timeline/src/util/utils.dart';
-import 'package:calendar_timeline/src/year_item.dart';
+import 'package:calendar_timeline_sbk/src/day_item.dart';
+import 'package:calendar_timeline_sbk/src/month_item.dart';
+import 'package:calendar_timeline_sbk/src/util/utils.dart';
+import 'package:calendar_timeline_sbk/src/year_item.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -24,6 +24,7 @@ class CalendarTimeline extends StatefulWidget {
     this.leftMargin = 0,
     this.dayColor,
     this.activeDayColor,
+    this.inactiveDayNameColor,
     this.activeBackgroundDayColor,
     this.monthColor,
     this.dotsColor,
@@ -60,6 +61,7 @@ class CalendarTimeline extends StatefulWidget {
   final double leftMargin;
   final Color? dayColor;
   final Color? activeDayColor;
+  final Color? inactiveDayNameColor;
   final Color? activeBackgroundDayColor;
   final Color? monthColor;
   final Color? dotsColor;
@@ -455,6 +457,7 @@ class _CalendarTimelineState extends State<CalendarTimeline> {
                     widget.selectableDayPredicate!(currentDay),
                 dayColor: widget.dayColor,
                 activeDayColor: widget.activeDayColor,
+                inactiveDayNameColor: widget.inactiveDayNameColor,
                 activeDayBackgroundColor: widget.activeBackgroundDayColor,
                 dotsColor: widget.dotsColor,
                 dayNameColor: widget.dayNameColor,

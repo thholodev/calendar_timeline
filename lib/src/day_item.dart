@@ -10,6 +10,7 @@ class DayItem extends StatelessWidget {
     this.isSelected = false,
     this.dayColor,
     this.activeDayColor,
+    this.inactiveDayNameColor,
     this.activeDayBackgroundColor,
     this.available = true,
     this.dotsColor,
@@ -22,6 +23,7 @@ class DayItem extends StatelessWidget {
   final Function onTap;
   final Color? dayColor;
   final Color? activeDayColor;
+  final Color? inactiveDayNameColor;
   final Color? activeDayBackgroundColor;
   final bool available;
   final Color? dotsColor;
@@ -36,6 +38,7 @@ class DayItem extends StatelessWidget {
               Theme.of(context).colorScheme.secondary.withOpacity(0.5),
       fontSize: shrink ? 14 : 32,
       fontWeight: FontWeight.normal,
+      height: 0.8,
     );
     final selectedStyle = TextStyle(
       color: activeDayColor ?? Colors.white,
@@ -61,22 +64,28 @@ class DayItem extends StatelessWidget {
             if (isSelected) ...[
               SizedBox(height: shrink ? 6 : 7),
               if (!shrink) _buildDots(),
-              SizedBox(height: shrink ? 9 : 12),
+              SizedBox(height: shrink ? 2 : 5),
             ] else
-              SizedBox(height: shrink ? 10 : 14),
+              SizedBox(height: shrink ? 9 : 16),
             Text(
               dayNumber.toString(),
               style: isSelected ? selectedStyle : textStyle,
             ),
-            if (isSelected)
-              Text(
+            if (isSelected) Text(
                 shortName,
                 style: TextStyle(
                   color: dayNameColor ?? activeDayColor ?? Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: shrink ? 9 : 14,
                 ),
-              ),
+              ) else Text(
+                shortName,
+                style: TextStyle(
+                  color: available ? inactiveDayNameColor : inactiveDayNameColor!.withOpacity(0.5),
+                  fontWeight: FontWeight.bold,
+                  fontSize: shrink ? 9 : 14,
+                ),
+              )
           ],
         ),
       ),
